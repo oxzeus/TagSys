@@ -1,0 +1,92 @@
+body {
+  background: #2D323A;
+  text-align: center;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+h1, p {
+  color: #f0f8ff;
+}
+
+#userinput {
+  height: 5px;
+  width: 50%;
+  border: none;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+#enter {
+  height: 45px;
+  width: 10%;
+  border: none;
+  background: #f0f8ff;
+}
+
+#enter:hover {
+  background: #b5c0ce;
+}
+
+.coolTitle {
+  text-align: center;
+  font-family: 'Oswald', Helvetica, sans-serif;
+  font-size: 40px;
+  transform: skewY(-10deg);
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: tomato;
+  text-shadow:
+    -1px -1px 0 firebrick,
+    -2px -2px 0 firebrick,
+    -3px -3px 0 firebrick,
+    -4px -4px 0 firebrick,
+    -5px -5px 0 firebrick,
+    -6px -6px 0 firebrick,
+    -7px -7px 0 firebrick,
+    -8px -8px 0 firebrick,
+    -30px 20px 40px dimgrey;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+#list {
+  display: flex;
+  grid-gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+li {
+  list-style: none;
+  grid-row: none;
+  text-align: center;
+  padding: 10px;
+  background: #f0f8ff;
+}
+
+.div li {
+  background: transparent;
+  color: #000000;
+}
+
+.div, li {
+  display: flex;
+  width: fit-content;
+  background: #f0f8ff;
+  cursor: context-menu;
+  border-radius: 5px;
+  justify-self: center;
+}
+
+.close {
+  padding: 7px;
+  background: #d9e4f1;
+  font-size: 15px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.close:hover {
+  background: #b5c0ce;
+}
