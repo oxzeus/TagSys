@@ -2,10 +2,11 @@ var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
 var listli = document.querySelectorAll("#list > li");
-
+var spanerr = document.getElementById('isinvalid');
 
 function inputLength() {
   return input.value.length;
+
 }
 
 // toggle active on the list
@@ -28,7 +29,7 @@ function createListElement() {
   var colorString = color;
   div.style['background-color'] = colorString;
 
-  //
+
   // add a div that contain li and span
   div.appendChild(li);
   div.classList.add("div");
@@ -56,7 +57,7 @@ function createListElement() {
   }
   //
 
-  // Cross the items
+  // Cross the new items
   [].forEach.call(listli, el => {
     el.addEventListener('click', ListCross);
     el.addEventListener('click', CloseBtn);
@@ -82,15 +83,33 @@ function createListElement() {
 
 }
 
+function get_value() {
+  var inputlength1 = input.value.length;
+  document.getElementById('count').innerHTML = inputlength1 + "/" + "50";
+}
+
+
+function maxChar() {
+  input.style.background = "#ffdddd";
+  spanerr.style.display = "flex";
+  input.value = "";
+}
+
 function addListAfterClick() {
-  if (inputLength() > 0) {
+  if (inputLength() > 0 && inputLength() < 50) {
     createListElement();
+  } else {
+    maxChar();
   }
 }
 
 function addListAfterKeypress(event) {
-  if (inputLength() > 0 && event.keyCode === 13) {
+  if (inputLength() > 0 && event.keyCode === 13 && inputLength() < 50) {
     createListElement();
+    input.style.background = "#f0f8ff";
+    spanerr.style.display = "none";
+  } else if (inputLength() >= 50 && event.keyCode === 13) {
+    maxChar();
   }
 }
 
@@ -99,6 +118,10 @@ button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
 
+// Cross the existing items
 [].forEach.call(listli, el => {
   el.addEventListener('click', ListCross);
 })
+
+
+//-----------------------------
