@@ -95,9 +95,15 @@ function maxChar() {
   input.value = "";
 }
 
+function InputReset() {
+  input.style.background = "#f0f8ff";
+  spanerr.style.display = "none";
+}
+
 function addListAfterClick() {
   if (inputLength() > 0 && inputLength() < 50) {
     createListElement();
+    InputReset();
   } else {
     maxChar();
   }
@@ -106,8 +112,7 @@ function addListAfterClick() {
 function addListAfterKeypress(event) {
   if (inputLength() > 0 && event.keyCode === 13 && inputLength() < 50) {
     createListElement();
-    input.style.background = "#f0f8ff";
-    spanerr.style.display = "none";
+    InputReset();
   } else if (inputLength() >= 50 && event.keyCode === 13) {
     maxChar();
   }
