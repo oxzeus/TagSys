@@ -167,6 +167,12 @@ function morphTo(timeline, toggler) {
       }]
     })
     .add({
+        targets: ".circle",
+        fill: toggler ? "#FFC700" : "#eee"
+      },
+      "-=500"
+    )
+    .add({
         targets: "#darkMode",
         rotate: toggler ? 40 : 320
       },
