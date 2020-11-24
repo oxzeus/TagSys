@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   background: #eee;
   text-align: center;
   font-family: 'Libre Franklin', sans-serif;
@@ -6,6 +7,46 @@ body {
 
 h1, p {
   color: #2d3436;
+}
+
+main {
+  margin-bottom: 200px;
+}
+
+footer {
+  font-family: 'Cutive Mono', monospace;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.name {
+  color: #d8074e;
+}
+
+.left-side {
+  justify-self: center;
+}
+
+.right-side {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-self: center;
+}
+
+.contact {
+  transform: scale(.6);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15%;
+  top: -6px;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
 }
 
 /*--------------------------
