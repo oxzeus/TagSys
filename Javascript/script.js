@@ -91,7 +91,7 @@ function createListElement() {
 
 function get_value() {
   var inputlength1 = input.value.length;
-  document.getElementById('count').innerHTML = inputlength1 + "/" + "50";
+  document.getElementById('count').innerHTML = inputlength1 + "/" + "20";
 }
 
 
@@ -109,19 +109,21 @@ function InputReset() {
 }
 
 function addListAfterClick() {
-  if (inputLength() > 0 && inputLength() < 50) {
+  if (inputLength() > 0 && inputLength() < 20) {
     createListElement();
     InputReset();
-  } else {
+  } else if (inputLength() >= 20) {
     maxChar();
   }
+
+
 }
 
 function addListAfterKeypress(event) {
-  if (inputLength() > 0 && event.keyCode === 13 && inputLength() < 50) {
+  if (inputLength() > 0 && event.keyCode === 13 && inputLength() < 20) {
     createListElement();
     InputReset();
-  } else if (inputLength() >= 50 && event.keyCode === 13) {
+  } else if (inputLength() >= 20 && event.keyCode === 13) {
     maxChar();
   }
 }
