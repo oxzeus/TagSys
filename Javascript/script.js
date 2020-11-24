@@ -179,7 +179,7 @@ function morphTo(timeline, toggler) {
       "-=700"
     )
     .add({
-        targets: "h1,p,div,#count",
+        targets: "h1,p,#count",
         color: toggler ? "#2d3436" : "#eee"
       },
       "-=700"
